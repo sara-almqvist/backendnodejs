@@ -1,6 +1,6 @@
-const fs = require('fs').promises;
+import fs from 'fs/promises';
 
-async function lasFil() {
+export async function lasFil() {
   try {
     const innehall = await fs.readFile('textfil.txt', 'utf8');
 
@@ -11,3 +11,8 @@ async function lasFil() {
 }
 
 lasFil();
+
+/* alternativ:
+fs.readFile('textfil.txt', 'utf8', (err, text) => {
+    console.log(text)});
+    */
