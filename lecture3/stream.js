@@ -1,6 +1,6 @@
 import { createReadStream, createWriteStream } from 'node:fs';
 
-const stream = createReadStream('stortext.txt', 'utf8');
+const stream = createReadStream('SQL_Grunder_Lektion1.pdf', 'utf8');
 const log = createWriteStream('nytxt.txt', { flags: 'a' });
 let totalBytes = 0;
 let chunkCount = 0;
