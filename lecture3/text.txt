@@ -1,0 +1,1 @@
+Det här är innehållet i en textfil som ska läsas av node.js
