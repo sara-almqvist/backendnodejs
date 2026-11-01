@@ -1,6 +1,6 @@
 import { createReadStream, createWriteStream } from 'node:fs';
 
-const stream = createReadStream('SQL_Grunder_Lektion1.pdf', 'utf8');
+const stream = createReadStream('stortext.txt', 'utf8');
 const log = createWriteStream('nytxt.txt', { flags: 'a' });
 let totalBytes = 0;
 let chunkCount = 0;
@@ -18,7 +18,7 @@ stream.on('data', (chunk) => {
   const chunkSizeInKB = (chunkSizeInBytes / 1024).toFixed(2);
   totalBytes += chunkSizeInBytes;
   console.log(`Chunk #${chunkCount}: Storlek = ${chunkSizeInKB} KB`);
-  log.write(`Inköpslista: ${chunk} \n`);
+  log.write(`${chunk} \n`);
 });
 stream.on('end', () => {
   console.log('Allt är läst');
