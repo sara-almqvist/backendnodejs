@@ -3,18 +3,18 @@ import User from '../models/User.js';
 
 //Hämta alla användare (GET)
 
-/*pg
+//pg
 export const getUsers = async (req, res) => {
   try {
-    const result = await query('SELECT name FROM users');
+    const result = await query('SELECT * FROM users');
     console.log(result.rowCount);
     res.json(result.rows);
   } catch (err) {
     console.error(err.message);
     res.status(500).json({ error: 'Serverfel vid hämtning av användare' });
   }
-};*/
-//Mongo
+};
+/*Mongo
 export const getUsers = async (req, res) => {
   try {
     const users = await User.find();
@@ -22,10 +22,10 @@ export const getUsers = async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Serverfel vid hämtning av användare' });
   }
-};
+};*/
 
 //Hämta en användare (ID) (GET)
-/* pg
+// pg
 export const getUserById = async (req, res) => {
   try {
     const result = await query('SELECT name FROM users WHERE userID = $1', [
@@ -36,9 +36,9 @@ export const getUserById = async (req, res) => {
     console.error(err.message);
     res.status(500).json({ error: 'Serverfel vid hämtning av en användare' });
   }
-};*/
+};
 
-//Mongo
+/*Mongo
 export const getUserById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -46,10 +46,10 @@ export const getUserById = async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Serverfel vid hämtning av en användare' });
   }
-};
+};*/
 
 //Skapa en ny användare (POST)
-/*pg
+//pg
 export const createUser = async (req, res) => {
   const { name } = req.body;
 
@@ -63,8 +63,8 @@ export const createUser = async (req, res) => {
     console.error(err.message);
     res.status(500).json({ error: 'Serverfel vid skapande av användare' });
   }
-};*/
-//Mongo
+};
+/*Mongo
 export const createUser = async (req, res) => {
   const { name, email } = req.body;
 
@@ -75,10 +75,10 @@ export const createUser = async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Kunde inte skapa användare' });
   }
-};
+};*/
 
 //Uppdatera en användare (PATCH)
-/*pg
+//pg
 export const updateUser = async (req, res) => {
   const { name } = req.body;
 
@@ -92,7 +92,9 @@ export const updateUser = async (req, res) => {
     console.error(err.message);
     res.status(500).json({ error: 'Fel vid uppdatering av användare' });
   }
-};*/
+};
+
+/*Mongo
 export const updateUser = async (req, res) => {
   const { name, email } = req.body;
   try {
@@ -105,10 +107,10 @@ export const updateUser = async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Fel vid uppdatering av användare' });
   }
-};
+};*/
 
 //Ta bort en användare (DELETE)
-/*pg
+//pg
 export const deleteUser = async (req, res) => {
   try {
     const result = await query('DELETE FROM users WHERE userID = $1', [
@@ -119,9 +121,9 @@ export const deleteUser = async (req, res) => {
     console.error(err.message);
     res.status(500).json({ error: 'Fel vid borttagande av användare' });
   }
-};*/
+};
 
-//Mongo
+/*Mongo
 export const deleteUser = async (req, res) => {
   try {
     await User.findByIdAndDelete(req.params.id);
@@ -130,4 +132,4 @@ export const deleteUser = async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Fel vid radering av användare' });
   }
-};
+};*/
