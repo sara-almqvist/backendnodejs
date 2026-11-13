@@ -1,0 +1,9 @@
+$kind: http-request
+name: http://localhost:3000/users/
+description: ""
+url: http://localhost:3000/users/
+method: GET
+body:
+  type: json
+  content: '{"name":"Eva Halv", "email" : "nyttfel@test.se"}'
+order: 1000
