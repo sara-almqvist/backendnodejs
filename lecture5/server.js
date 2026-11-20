@@ -109,6 +109,8 @@ app.get('/me', requireAuth, (req, res) => {
   res.json({ message: `Hej ${req.user.username}!` });
 });
 
+//Lektion 6 är slut
+
 app.use((err, req, res, next) => {
   if (err.code === 11000) {
     return res.status(409).json({ message: 'Avändarnamnet är upptaget' });

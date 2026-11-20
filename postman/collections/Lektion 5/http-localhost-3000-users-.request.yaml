@@ -1,9 +1,13 @@
 $kind: http-request
 name: http://localhost:3000/users/
 description: ""
-url: http://localhost:3000/users/
-method: GET
+url: http://localhost:3000/users/6b00171534a690eb54138388
+method: DELETE
 body:
   type: json
-  content: '{"name":"Eva Halv", "email" : "nyttfel@test.se"}'
+  content: '{"username":"GustavK", "password":"Hemlighet123"}'
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_0ypo}}"
 order: 1000
